@@ -60,17 +60,6 @@
         }
       ],
       "width": 1400.00
-    },
-    {
-      "config": "{}",
-      "displayName": "Prueba",
-      "displayOption": 1,
-      "filters": "[]",
-      "height": 720.00,
-      "name": "5c6ce0df8a97ad9bfd26",
-      "ordinal": 1,
-      "visualContainers": [],
-      "width": 1280.00
     }
   ]
 }
