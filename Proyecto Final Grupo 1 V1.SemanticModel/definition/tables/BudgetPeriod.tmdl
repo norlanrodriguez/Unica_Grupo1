@@ -1,0 +1,56 @@
+table BudgetPeriod
+	lineageTag: d67ca442-f993-4357-817e-9566dcca1fef
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 4feff8b6-2f1c-40f0-861c-7e9deaad59e8
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: fe9104e3-77cb-438c-a712-6e896c8bbec1
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: cc87525e-26bf-4503-85ea-6443f5709e7c
+		summarizeBy: sum
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: int64
+		formatString: 0
+		lineageTag: 351501fd-d073-4b9f-a8e4-9f7590fc0257
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BudgetPeriod = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"2df341fb-8872-49e3-a06d-321c2fb40639" = Workspaces{[workspaceId="2df341fb-8872-49e3-a06d-321c2fb40639"]}[Data],
+				    #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420" = #"2df341fb-8872-49e3-a06d-321c2fb40639"{[dataflowId="b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"]}[Data],
+				    BudgetPeriod_ = #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"{[entity="BudgetPeriod",version=""]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(BudgetPeriod_, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"CalendarYear", Int64.Type}, {"MonthName", type text}, {"Month Number", Int64.Type}, {"Period", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

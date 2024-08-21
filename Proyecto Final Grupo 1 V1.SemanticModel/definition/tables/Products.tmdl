@@ -1,0 +1,206 @@
+table Products
+	lineageTag: 11dc9246-0868-4dbe-9429-10f36ac6e966
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ca226788-bfb5-42f4-b452-831b1dcd4ab1
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 47f0c68a-23f5-45a8-90e0-735bd262a4a0
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: b2b1bdfd-99c3-4050-a027-787b428e78d6
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardCost
+		dataType: double
+		lineageTag: 44263be0-74d6-4dc1-95b8-9d8cf0c632d0
+		summarizeBy: sum
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Color
+		dataType: string
+		lineageTag: 1f021140-3db0-4cc6-8cc3-db681cbb1deb
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column SafetyStockLevel
+		dataType: int64
+		formatString: 0
+		lineageTag: ad21d111-66a4-49f3-988f-578112a9e2d0
+		summarizeBy: sum
+		sourceColumn: SafetyStockLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListPrice
+		dataType: double
+		lineageTag: 174fbd8a-3d94-4f7e-9d00-9f0e3fe9cd3b
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c964deb-b2e3-49ab-97ad-21d10d45d7b3
+		summarizeBy: sum
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeRange
+		dataType: string
+		lineageTag: 57b3708e-d470-4959-9798-53b3e51e7c98
+		summarizeBy: none
+		sourceColumn: SizeRange
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: 7e3a3b47-2099-40ca-9b8a-213b54aed21b
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DaysToManufacture
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fea5635-8287-44fa-96e9-9c66b57085b1
+		summarizeBy: sum
+		sourceColumn: DaysToManufacture
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLine
+		dataType: string
+		lineageTag: 5fcb0747-cd3f-4e93-8ccd-f65a7b1ae21b
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column DealerPrice
+		dataType: double
+		lineageTag: b065d0be-c35b-47b0-b7b6-22a4f9831d64
+		summarizeBy: sum
+		sourceColumn: DealerPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Class
+		dataType: string
+		lineageTag: 584ab1c7-01e3-4f90-b705-60e2cfe45c48
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModelName
+		dataType: string
+		lineageTag: da2a275c-1131-4b25-bdfc-378bb3b07e0c
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 77fadc05-0499-4e9b-ab66-1a46347bb853
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 7bf0ec27-3821-4b70-8f36-4515c03f662a
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategory
+		dataType: string
+		lineageTag: 850422af-39a0-4f9d-b68d-9ee2e91bbc29
+		summarizeBy: none
+		sourceColumn: SubCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 5c73edbb-33bc-48bf-b8c2-135fa28af500
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 63202a35-9bb5-47ed-8452-44be466f7eb2
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: df99d0d6-98a6-4a15-b399-66157835ad6c
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Products = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"2df341fb-8872-49e3-a06d-321c2fb40639" = Workspaces{[workspaceId="2df341fb-8872-49e3-a06d-321c2fb40639"]}[Data],
+				    #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420" = #"2df341fb-8872-49e3-a06d-321c2fb40639"{[dataflowId="b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"]}[Data],
+				    Products_ = #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"{[entity="Products",version=""]}[Data]
+				in
+				    Products_
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
