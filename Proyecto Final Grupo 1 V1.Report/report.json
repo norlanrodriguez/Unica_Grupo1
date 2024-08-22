@@ -123,6 +123,27 @@
         }
       ],
       "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Prueba SU",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fb014529b134f7a990e4",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5ca748d42e50bf4e918a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
     }
   ]
 }
