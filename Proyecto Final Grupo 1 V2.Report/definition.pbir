@@ -1,9 +1,0 @@
-{
-  "version": "4.0",
-  "datasetReference": {
-    "byPath": {
-      "path": "../Proyecto Final Grupo 1 V2.SemanticModel"
-    },
-    "byConnection": null
-  }
-}
