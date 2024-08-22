@@ -1,0 +1,183 @@
+table Sales
+	lineageTag: 1c305841-a96c-4654-bcdf-f20af1fd4c6a
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: eeff61ed-1eca-495b-a97c-50af115cbe38
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'OrderDate Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bbac38a-1e80-4a50-953b-f1d123bec68b
+		summarizeBy: count
+		sourceColumn: OrderDate Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: be215dbe-d896-4a0d-98a0-b7c902a10cf9
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ab1c69f-1986-4134-97d2-f98f5d2d4c49
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fb325c84-cc75-44ba-b656-cf6058fff2dc
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: 052ae4a2-8b8f-4bd8-bfdb-dcd2a0e5f79d
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderLineNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 32eaa91c-0f48-49c8-8ab8-ef574c2703ec
+		summarizeBy: sum
+		sourceColumn: SalesOrderLineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ce61d5dd-feec-48d2-9c45-a0eb3f969b95
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 213d550a-8a4a-4a02-8f93-46e8dd707916
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExtendedAmount
+		dataType: int64
+		formatString: 0
+		lineageTag: 9312dfeb-4ed6-4fb5-aa4a-c4b3d0959e91
+		summarizeBy: sum
+		sourceColumn: ExtendedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPriceDiscountPct
+		dataType: int64
+		formatString: 0
+		lineageTag: c2e7b3eb-8dbd-44ad-9896-c1403590eef1
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscountPct
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountAmount
+		dataType: int64
+		formatString: 0
+		lineageTag: 8631c738-f692-41fb-9778-10132d01453c
+		summarizeBy: sum
+		sourceColumn: DiscountAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductStandardCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 4388c076-9454-4e60-ae65-e12661c1a8a9
+		summarizeBy: sum
+		sourceColumn: ProductStandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalProductCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bc6fcb2-bc29-4c95-8611-eb9bcab9e3d1
+		summarizeBy: sum
+		sourceColumn: TotalProductCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmount
+		dataType: int64
+		formatString: 0
+		lineageTag: b12514e8-4365-4b69-856a-b3fd6d29926b
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxAmt
+		dataType: int64
+		formatString: 0
+		lineageTag: e1f79e75-c088-4357-ab0c-34725cefddc9
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freight
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c42b8c6-428f-4985-82b6-55795772d5b2
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionMonthID
+		dataType: string
+		lineageTag: 17c8fb63-6bdc-42be-8697-74eaa1b55778
+		summarizeBy: none
+		sourceColumn: RegionMonthID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"2df341fb-8872-49e3-a06d-321c2fb40639" = Workspaces{[workspaceId="2df341fb-8872-49e3-a06d-321c2fb40639"]}[Data],
+				    #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420" = #"2df341fb-8872-49e3-a06d-321c2fb40639"{[dataflowId="b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"]}[Data],
+				    Sales_ = #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"{[entity="Sales",version=""]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Sales_, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"OrderDate", type date}, {"OrderDate Key", Int64.Type}, {"ProductKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"SalesTerritoryKey", Int64.Type}, {"SalesOrderNumber", type text}, {"SalesOrderLineNumber", Int64.Type}, {"OrderQuantity", Int64.Type}, {"UnitPrice", Int64.Type}, {"ExtendedAmount", Int64.Type}, {"UnitPriceDiscountPct", Int64.Type}, {"DiscountAmount", Int64.Type}, {"ProductStandardCost", Int64.Type}, {"TotalProductCost", Int64.Type}, {"SalesAmount", Int64.Type}, {"TaxAmt", Int64.Type}, {"Freight", Int64.Type}, {"RegionMonthID", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

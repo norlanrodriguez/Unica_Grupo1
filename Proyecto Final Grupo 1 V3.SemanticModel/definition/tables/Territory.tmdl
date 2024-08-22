@@ -1,0 +1,54 @@
+table Territory
+	lineageTag: 84fa1667-bc24-4704-bd88-c343a5b2eafd
+
+	column 'Territory Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: f51d0917-4d51-4413-b642-63a94dc28e61
+		summarizeBy: none
+		sourceColumn: Territory Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: fb34df3e-71e9-4596-b561-7ae5ea1eb75b
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: dcca26e7-c203-4f30-a593-95f0f15ca93d
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		lineageTag: 64e42e4b-c714-4c32-9a9e-c7059c620826
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Territory = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"2df341fb-8872-49e3-a06d-321c2fb40639" = Workspaces{[workspaceId="2df341fb-8872-49e3-a06d-321c2fb40639"]}[Data],
+				    #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420" = #"2df341fb-8872-49e3-a06d-321c2fb40639"{[dataflowId="b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"]}[Data],
+				    Territory_ = #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"{[entity="Territory",version=""]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Territory_, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Territory Key", Int64.Type}, {"Region", type text}, {"Country", type text}, {"Group", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
