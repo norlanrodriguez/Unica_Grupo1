@@ -1,0 +1,32 @@
+relationship AutoDetected_533c1e76-eab1-4112-bd3b-acab8ee72acc
+	fromColumn: Budget.Period
+	toColumn: BudgetPeriod.Period
+
+relationship AutoDetected_d3645427-c9fb-47e9-8bbc-2d585044a200
+	fromColumn: Calendar.Period
+	toColumn: BudgetPeriod.Period
+
+relationship AutoDetected_94ed177c-589d-403a-b624-fad805f7d558
+	fromColumn: Sales.CustomerKey
+	toColumn: Customers.CustomerKey
+
+relationship AutoDetected_6e82f906-bef5-48b0-b8f1-a7294d73dfca
+	fromColumn: dimProductSubCategory.ProductCategoryKey
+	toColumn: dimProductCategory.ProductCategoryKey
+
+relationship AutoDetected_b8298090-58a0-47bb-8eb8-2570262f2534
+	fromColumn: Products.ProductSubcategoryKey
+	toColumn: dimProductSubCategory.ProductSubcategoryKey
+
+relationship AutoDetected_85e39927-e54d-4702-9560-41d5620da660
+	fromColumn: Sales.ProductKey
+	toColumn: Products.ProductKey
+
+relationship 9eec0349-b1e1-c362-6db5-8850839325cc
+	fromColumn: Sales.OrderDate
+	toColumn: Calendar.Date
+
+relationship a80f61e2-5fcd-0837-7790-ced294373989
+	fromColumn: Sales.SalesTerritoryKey
+	toColumn: Territory.'Territory Key'
+

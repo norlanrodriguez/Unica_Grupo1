@@ -1,0 +1,47 @@
+table Budget
+	lineageTag: b1cee890-73f0-47fb-8d2b-d2ab7263ee83
+
+	column Category
+		dataType: string
+		lineageTag: e0e390b5-36c2-498c-a7e8-5fe92292f450
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget
+		dataType: int64
+		formatString: 0
+		lineageTag: 3be6f06d-0064-4e79-8920-88e813534e77
+		summarizeBy: sum
+		sourceColumn: Budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: int64
+		formatString: 0
+		lineageTag: df11e51c-236c-4bd2-a391-785fa182d770
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Budget = m
+		mode: import
+		source =
+				let
+				    Origen = PowerPlatform.Dataflows(null),
+				    Workspaces = Origen{[Id="Workspaces"]}[Data],
+				    #"2df341fb-8872-49e3-a06d-321c2fb40639" = Workspaces{[workspaceId="2df341fb-8872-49e3-a06d-321c2fb40639"]}[Data],
+				    #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420" = #"2df341fb-8872-49e3-a06d-321c2fb40639"{[dataflowId="b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"]}[Data],
+				    Budget_ = #"b9c8fcd9-6d0a-42f4-9adb-ecee6e728420"{[entity="Budget",version=""]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Budget_, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Category", type text}, {"Budget", Int64.Type}, {"Period", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
