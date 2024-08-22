@@ -1,5 +1,13 @@
 {
+<<<<<<< HEAD
   "config": "{\"version\":\"5.55\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+=======
+<<<<<<< HEAD:Proyecto Final Grupo 1 V2.Report/report.json
+  "config": "{\"version\":\"5.55\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":2,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+=======
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+>>>>>>> d2e2e2dee0001f8769131fbf6abaecd8eca91d8c:Proyecto Final Grupo 1 V1.Report/report.json
+>>>>>>> 4303bcfe3130b0fab3e01cd0cf451bd5bbf806e5
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "PBI_CV_EB3A4088_75C5_4746_9D8B_255A7B7ECD6D",
@@ -84,7 +92,32 @@
     },
     {
       "config": "{}",
+<<<<<<< HEAD:Proyecto Final Grupo 1 V2.Report/report.json
       "displayName": "Prueba",
+=======
+      "displayName": "Arlen",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "be2f0a8123fa6fd97ced",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"df3e9e6b9e33d9fd0c3f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Prueba Freddy",
+>>>>>>> d2e2e2dee0001f8769131fbf6abaecd8eca91d8c:Proyecto Final Grupo 1 V1.Report/report.json
       "displayOption": 1,
       "filters": "[]",
       "height": 720.00,
