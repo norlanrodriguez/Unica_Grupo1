@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "config": "{\"version\":\"5.56\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+=======
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+>>>>>>> 1fcb4fa1d98e7d649c0357d0966d92e6af5038ac
   "layoutOptimization": 0,
   "publicCustomVisuals": [
     "PBI_CV_EB3A4088_75C5_4746_9D8B_255A7B7ECD6D",
@@ -46,6 +50,7 @@
     },
     {
       "config": "{}",
+<<<<<<< HEAD
       "displayName": "22.08.2024",
       "displayOption": 1,
       "filters": "[]",
@@ -60,6 +65,22 @@
           "width": 280.00,
           "x": 10.00,
           "y": 0.00,
+=======
+      "displayName": "Eden",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "24f8ec263d3df720635f",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"87cf08a91c3b1b055076\",\"layouts\":[{\"id\":0,\"position\":{\"x\":500.4115226337448,\"y\":196.65294924554183,\"z\":0,\"width\":279.17695473251024,\"height\":279.17695473251024,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Budget.Budget)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Budget\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Budget\"}},\"Function\":0},\"Name\":\"Sum(Budget.Budget)\",\"NativeReferenceName\":\"Suma de Budget\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Budget\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.18,
+          "width": 279.18,
+          "x": 500.41,
+          "y": 196.65,
+>>>>>>> 1fcb4fa1d98e7d649c0357d0966d92e6af5038ac
           "z": 0.00
         }
       ],
@@ -118,6 +139,27 @@
           "height": 487.14,
           "width": 900.37,
           "x": 10.08,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Prueba SU",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fb014529b134f7a990e4",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5ca748d42e50bf4e918a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
           "y": 0.00,
           "z": 0.00
         }
